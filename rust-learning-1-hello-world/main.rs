@@ -1,4 +1,4 @@
-fn main(name: &str) {
-    eprint!("Hello, world!");
-    println!("Hey, {}!", name)
+fn main() {
+    println!("Hello, world!");
+    print!("Hey");
 }
