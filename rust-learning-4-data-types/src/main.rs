@@ -51,8 +51,18 @@ fn main() {
     // println!("truncated division = {truncated}");
     // println!("remainder division = {remainder}");
 
+    // // boolean
     // let t = true;
     // let f: bool = false;
+
+    // // character
+    // let ch = 'z';
+    // let ch1: char = 'ℤ'; // with explicit type annotation
+    // let ch_emoji_cat = '😻';
+    // println!("{ch}");
+    // println!("{ch1}");
+    // println!("{ch_emoji_cat}");
+    
 
     // // Compound types
     // // Tuples
