@@ -73,14 +73,35 @@
 // }
 
 // Here, It will not throw error because, ownership of r1 and r2 is dropped in println! line
+// fn main() {
+//     let mut s = String::from("hello");
+
+//     let r1 = &s; // no problem
+//     let r2 = &s; // no problem
+//     println!("{r1} and {r2}");
+//     // Variables r1 and r2 will not be used after this point.
+
+//     let r3 = &mut s; // no problem
+//     println!("{r3}");
+// }
+
+//Dangled Refrence
 fn main() {
-    let mut s = String::from("hello");
+    let reference_to_nothing = dangle();
+    println!("{reference_to_nothing}");
+}
 
-    let r1 = &s; // no problem
-    let r2 = &s; // no problem
-    println!("{r1} and {r2}");
-    // Variables r1 and r2 will not be used after this point.
+// fn dangle() -> &String { // dangle returns a reference to a String
 
-    let r3 = &mut s; // no problem
-    println!("{r3}");
+//     let s = String::from("hello"); // s is a new String
+
+//     &s // we return a reference to the String, s
+// } // Here, s goes out of scope and is dropped, so its memory goes away.
+//   // Danger!
+
+//The solution is to return a variable directly instead of the refrence.
+fn dangle() -> String {
+    let s = String::from("hello");
+
+    s
 }
